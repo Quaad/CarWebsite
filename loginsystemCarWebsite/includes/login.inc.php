@@ -50,7 +50,7 @@ if (isset($_POST['login-submit'])) {
         // If they don't match then we create an error message!
         if ($pwdCheck == false) {
           // If there is an error we send the user back to the signup page.
-          header("Location: ../index.php?error=wrongpwd");
+          header("Location: ../index.php?error=wrongdetails");
           exit();
         }
         // Then if they DO match, then we know it is the correct user that is trying to log in!

@@ -7,7 +7,7 @@
       <div class="wrapper-main">
         <section class="section-default">
           <!--
-          We can choose whether or not to show ANY content on our pages depending on if we are logged in or not. I talk more about SESSION variables in the login.inc.php file!
+          We can choose whether or not to show ANY content on our pages depending on if we are logged in or not. 
           -->
           <?php
           if (!isset($_SESSION['id'])) {
@@ -16,12 +16,34 @@
           else if (isset($_SESSION['id'])) {
             echo '<p class="login-status">You are logged in!</p>';
           }
+            
+            
+            
+            
+            
+        if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyfields&mailuid=") {
+        echo '<p class="signuperror">Fill in all fields!</p>';
+        }
+        else if ($_GET["error"] == "wrongdetails") {
+        echo '<p class="signuperror">Fill in all fields!</p>';
+        }
+    }
+            
+            
+            
+            
+            
+            
+            
+            
+            
           ?>
         </section>
       </div>
     </main>
 
 <?php
-  // And just like we include the header from a separate file, we do the same with the footer.
+  // footer.
   require "footer.php";
 ?>

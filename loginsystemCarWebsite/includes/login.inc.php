@@ -1,3 +1,9 @@
+<!-- Check this page --> 
+
+
+
+
+
 <?php
 // Here we check whether the user got to this page by clicking the proper login button.
 if (isset($_POST['login-submit'])) {

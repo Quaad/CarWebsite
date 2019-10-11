@@ -23,9 +23,7 @@
         </a>
         <ul>
           <li><a href="index.php">Home</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">About me</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="profile.php">Profile</a></li>
         </ul>
       </nav>
       <div class="header-login">

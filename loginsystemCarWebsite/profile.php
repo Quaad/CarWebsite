@@ -1,6 +1,4 @@
-<!-- profile edit page --> 
-
-
+<!-- profile edit page -->
 
 <?php
 echo "were on the profile";
@@ -10,34 +8,26 @@ if (isset($_SESSION['id'])) {
     echo "session is set";
     include_once "includes/dbh.inc.php";
     $user_check = $_SESSION['id'];
-    
+
     //select from user database and return data
     $sql = "SELECT * FROM users WHERE idUsers='$user_check';";
     //if there is a result, fetch and return the row
     $result = mysqli_query($conn,$sql);
-  
+
     $resultCheck = mysqli_num_rows($result);
     if ($resultCheck > 0) {
         echo "results are ok";
         if ($row = mysqli_fetch_assoc($result)){
-           echo $user_check; 
+           echo $user_check;
             echo $row['uidUsers'];
-        }        
+        }
     } else {
         echo "no results";
     }
-    
-    
-   
-    //displaying user info
-
-//$user_check = $_SESSION["login_user"];
-
-
 
 }
 
-?>  
+?>
 
 <html>
   <head>

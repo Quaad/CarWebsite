@@ -7,7 +7,7 @@
       <div class="wrapper-main">
         <section class="section-default">
           <!--
-          We can choose whether or not to show ANY content on our pages depending on if we are logged in or not. 
+          We can choose whether or not to show ANY content on our pages depending on if we are logged in or not.
           -->
           <?php
           if (!isset($_SESSION['id'])) {
@@ -16,11 +16,7 @@
           else if (isset($_SESSION['id'])) {
             echo '<p class="login-status">You are logged in!</p>';
           }
-            
-            
-            
-            
-            
+
         if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyfields&mailuid=") {
         echo '<p class="signuperror">Fill in all fields!</p>';
@@ -29,15 +25,7 @@
         echo '<p class="signuperror">Fill in all fields!</p>';
         }
     }
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
           ?>
         </section>
       </div>

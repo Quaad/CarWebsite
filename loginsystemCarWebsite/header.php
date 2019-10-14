@@ -7,47 +7,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
-    <meta name=viewport content="width=device-width, initial-scale=1">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
+
   <body>
 
-    <!-- Here is the header where I decided to include the login form for this tutorial. -->
-    <header>
-      <nav class="nav-header-main">
-        <a class="header-logo" href="index.php">
-          <img src="img/logo.png" alt="mmtuts logo">
-        </a>
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="profile.php">Profile</a></li>
-        </ul>
-      </nav>
-      <div class="header-login">
-        <!--
-        Here is the HTML login form.
-        Notice that the "method" is set to "post" because the data we send is sensitive data.
-        The "inputs" I decided to have in the form include username/e-mail and password. The user will be able to choose whether to login using e-mail or username.
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+      <!-- Navbar content -->
 
-        Also notice that using PHP, we can choose whether or not to show the login/signup form, or to show the logout form, if we are logged in or not. We do this based on SESSION variables which I explain in more detail in the login.inc.php file!
-        -->
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.php">profile</a>
+          </li>
+        </ul>
+
         <?php
         if (!isset($_SESSION['id'])) {
           echo '<form action="includes/login.inc.php" method="post">
             <input type="text" name="mailuid" placeholder="E-mail/Username">
             <input type="password" name="pwd" placeholder="Password">
-            <button type="submit" name="login-submit">Login</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="login-submit">Login</button>
           </form>
-          <a href="signup.php" class="header-signup">Signup</a>';
+          <a href="signup.php"> Signup </button></a>';
         }
         else if (isset($_SESSION['id'])) {
           echo '<form action="includes/logout.inc.php" method="post">
-            <button type="submit" name="login-submit">Logout</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="login-submit">Logout</button>
           </form>';
         }
         ?>
       </div>
-    </header>
+    </nav>
+
+    <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -11,20 +11,11 @@ if (isset($_POST['signup-submit'])) {
   $email = $_POST['mail'];
   $password = $_POST['pwd'];
   $passwordRepeat = $_POST['pwd-repeat'];
-
-
-
-
   $forename = $_POST['fore'];
   $surname = $_POST['sur'];
   $postcode = $_POST['post'];
   $dob = $_POST['dob'];
   $telephone = $_POST['phone'];
-
-
-
-
-
 
   // error handling
 

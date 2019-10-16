@@ -56,25 +56,15 @@
               echo '<input type="text" name="mail" placeholder="E-mail">';
             }
             ?>
-            <input type="password" name="pwd" placeholder="Password">
-            <input type="password" name="pwd-repeat" placeholder="Repeat password">
 
-
-
-
+          <input type="password" name="pwd" placeholder="Password">
+          <input type="password" name="pwd-repeat" placeholder="Repeat password">
           <input type="text" name="fore" placeholder="Forename">
           <input type="text" name="sur" placeholder="Surname">
           <input type="text" name="post" placeholder="Postcode">
           <input type="date" name="dob" placeholder="Date Of Birth">
           <input type="tel" name="phone" placeholder="Telephone">
-
-
-
-
-
-
-
-            <button type="submit" name="signup-submit">Signup</button>
+          <button type="submit" name="signup-submit">Signup</button>
           </form>
         </section>
       </div>

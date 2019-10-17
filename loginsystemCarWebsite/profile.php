@@ -81,25 +81,25 @@ function updateUser($conn, $id) {
      <header>
        <title> Profile </title>
       </header>
-
+<div class="container-fluid">
 <!-- Returned data from user table connected by names -->
 <form  action = "" method = "post">
 
   <div class="form-row">
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <label>Username: </label>
       <input type="text" class="form-control"  name = "txtuidUsers" value = "<?php echo $row["uidUsers"]?>">
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <label>Email: </label>
       <input type="text" class="form-control"  name = "txtemailUsers" value = "<?php echo $row["emailUsers"]?>">
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <label>Firstname: </label>
       <input type="text" class="form-control"  name = "txtForname" value = "<?php echo $row["foreUsers"]?>">
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <label>Surname: </label>
       <input type="text" class="form-control"  name = "txtsurUsers" value = "<?php echo $row["surUsers"]?>">
     </div>
@@ -154,7 +154,7 @@ function updateUser($conn, $id) {
 
       ?>
 
-
+</div>
 
 
   </body>

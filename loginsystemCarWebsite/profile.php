@@ -79,22 +79,51 @@ function updateUser($conn, $id) {
 
       <!--header -->
      <header>
-      <!-- header-->
+       <title> Profile </title>
       </header>
-<div class="wrapper-main">
-<!-- Returned data from user table connected by names -->
-	<form action = "" method = "post">
-			<label>Username: </label><input type = "text" name = "txtuidUsers" value = "<?php echo $row["uidUsers"]?>" class = "box"/><br /><br />
-			<label>Email: </label><input type = "text" name = "txtemailUsers" value = "<?php echo $row["emailUsers"]?>" class = "box"/><br /><br />
-			<label>Forename:</label><input type = "text" name = "txtForname" value = "<?php echo $row["foreUsers"]?>" class = "box"/><br /><br />
-			<label>Surname: </label><input type = "text" name = "txtsurUsers" value = "<?php echo $row["surUsers"]?>" class = "box"/><br /><br />
-    	<label>Date of birth: </label><input type = "date" name = "numDate" value = "<?php echo $row["dobUsers"]?>" class = "box"/><br /><br />
-			<label>Telephone: </label><input type = "number" name = "numPhone" value = "<?php echo $row["telephoneUsers"]?>" class = "box"/><br /><br />
-			<label>Postcode: </label><input type = "text" name = "txtpostcode" value = "<?php echo $row["postUsers"]?>" class = "box"/><br /><br />
 
-	<!-- update button -->
-		<button type="submit" name="update-details">Update</button>
-	</form>
+<!-- Returned data from user table connected by names -->
+<form  action = "" method = "post">
+
+  <div class="form-row">
+
+    <div class="form-group col-md-4">
+      <label>Username: </label>
+      <input type="text" class="form-control"  name = "txtuidUsers" value = "<?php echo $row["uidUsers"]?>">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Email: </label>
+      <input type="text" class="form-control"  name = "txtemailUsers" value = "<?php echo $row["emailUsers"]?>">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Firstname: </label>
+      <input type="text" class="form-control"  name = "txtForname" value = "<?php echo $row["foreUsers"]?>">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Surname: </label>
+      <input type="text" class="form-control"  name = "txtsurUsers" value = "<?php echo $row["surUsers"]?>">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Date Of Birth: </label>
+      <input type="date" class="form-control"  name = "numDate" value = "<?php echo $row["dobUsers"]?>">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Phone Number: </label>
+      <input type="number" class="form-control"  name = "numPhone" value = "<?php echo $row["telephoneUsers"]?>">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Postcode: </label>
+      <input type="text" class="form-control"  name = "txtpostcode" value = "<?php echo $row["postUsers"]?>">
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary" name="update-details">Update</button>
+</form>
+
+
+
+
 
       <!-- ERROR OUTPUTS CHECK THISSSSSSS -->
       <?php
@@ -125,7 +154,6 @@ function updateUser($conn, $id) {
 
       ?>
 
-</div>
 
 
 

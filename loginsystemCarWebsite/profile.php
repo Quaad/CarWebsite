@@ -26,6 +26,7 @@ function updateUser($conn, $id) {
 	$postUsers = mysqli_real_escape_string($conn,$_POST["txtpostcode"]);
 	$session_idUsers = $_SESSION['id'];
 
+
   //ERROR HANDLERS AND EMAIL VALIDITY - CHECK THISSSSSSSS
   // check for any empty inputs.
   if (empty($uidUsers) || empty($emailUsers) || empty($foreUsers) || empty($surUsers) ||  empty($dobUsers) || empty($telephoneUsers || empty($postUsers))) {
@@ -49,15 +50,18 @@ function updateUser($conn, $id) {
   }
 
 	//update data in user table if the uidUsers and password are the same
-	$sql = "UPDATE users SET uidUsers = '$uidUsers' , emailUsers = '$emailUsers', foreUsers ='$foreUsers', surUsers='$surUsers', dobUsers ='$dobUsers', telephoneUsers ='$telephoneUsers' WHERE idUsers = '$session_idUsers';";
+	$sql = "UPDATE users SET uidUsers = '$uidUsers' , emailUsers = '$emailUsers', foreUsers ='$foreUsers', surUsers='$surUsers', dobUsers ='$dobUsers', telephoneUsers ='$telephoneUsers', postUsers ='$postUsers' WHERE idUsers = '$session_idUsers';";
 	if (mysqli_query($conn, $sql)){
 
-		$info = "User Update Completed ";
-		echo "<br>".$info;
+		$info = "User Updated Successfully ";
+		echo "<p class=signupsuccess> <br> .$info";
+
+    //$_SESSION['uid'] = $uidUsers; - SESSION THINGY CHECK
+
 	}else{
 		//if it does not connect then display error message
 		$info = "An Error Occured Whilst Updating User: ". mysqli_error($conn);
-		echo "<br>".$info;
+		echo "<p class=signuperror> <br> .$info";
 
 	}
 		$row = displayUser($conn, $_SESSION["id"]);
@@ -67,6 +71,7 @@ function updateUser($conn, $id) {
   //update button
   if(isset($_POST["update-details"])){
   	$info = updateUser($conn, $_SESSION["id"]);
+
   }
 
   //displaying the data from the table of the logged in user
@@ -74,6 +79,8 @@ function updateUser($conn, $id) {
 
   //closing the connection
   mysqli_close($conn);
+
+
 
   ?>
 
@@ -121,10 +128,6 @@ function updateUser($conn, $id) {
   <button type="submit" class="btn btn-primary" name="update-details">Update</button>
 </form>
 
-
-
-
-
       <!-- ERROR OUTPUTS CHECK THISSSSSSS -->
       <?php
       if (isset($_GET["error"])) {
@@ -148,14 +151,16 @@ function updateUser($conn, $id) {
         }
       }
 
+      //if a user is not signed it, they will be unable to access this page
       if(!isset($_SESSION['id'])){
       header("location:index.php");
       }
 
-      ?>
 
+
+      ?>
 </div>
 
-
-  </body>
-</html>
+<?php
+include "footer.php"
+?>

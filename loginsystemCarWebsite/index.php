@@ -10,13 +10,31 @@
           We can choose whether or not to show ANY content on our pages depending on if we are logged in or not.
           -->
           <?php
+
+          function displayUser($conn, $id) {
+          $sql = "SELECT idUsers, uidUsers FROM users WHERE idUsers = '$id'";
+
+          if($result = mysqli_query($conn, $sql)){
+            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+          	return $row;
+          }
+        }
+
+        $row = displayUser($conn, $_SESSION["id"]);
+
+
+
+          //If there is no session display the logged out text
           if (!isset($_SESSION['id'])) {
             echo '<p class="login-status">You are logged out!</p>';
           }
+          //if a user is logged in display the welcome message from their stored session username
           else if (isset($_SESSION['id'])) {
-            echo '<p class="login-status">You are logged in!</p>';
+            echo $row['uidUsers'];
+            
           }
 
+        //Error handlers
         if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyfields&mailuid=") {
         echo '<p class="signuperror">Fill in all fields!</p>';
@@ -26,6 +44,7 @@
         }
     }
 
+
           ?>
         </section>
       </div>
@@ -33,5 +52,5 @@
 
 <?php
   // footer.
-  require "footer.php";
+  include "footer.php";
 ?>

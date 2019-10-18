@@ -20,19 +20,16 @@
           }
         }
 
-        $row = displayUser($conn, $_SESSION["id"]);
+        //If there is no session display the logged out text
+        if (!isset($_SESSION['id'])) {
+          echo '<p class="login-status">You are logged out!</p>';
+        }
+        //if a user is logged in display the welcome message from their stored session username
+        else if (isset($_SESSION['id'])) {
+          $row = displayUser($conn, $_SESSION["id"]);
+          echo $row['uidUsers'];
 
-
-
-          //If there is no session display the logged out text
-          if (!isset($_SESSION['id'])) {
-            echo '<p class="login-status">You are logged out!</p>';
-          }
-          //if a user is logged in display the welcome message from their stored session username
-          else if (isset($_SESSION['id'])) {
-            echo $row['uidUsers'];
-            
-          }
+        }
 
         //Error handlers
         if (isset($_GET["error"])) {
@@ -43,7 +40,6 @@
         echo '<p class="signuperror">Fill in all fields!</p>';
         }
     }
-
 
           ?>
         </section>

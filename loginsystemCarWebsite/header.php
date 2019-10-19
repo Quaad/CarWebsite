@@ -5,24 +5,34 @@
   require "includes/dbh.inc.php";
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Hover.css -->
+    <link href="css/hover-min.css" rel="stylesheet">
 
+    <!-- animate.css -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+
+    <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,700&display=swap" rel="stylesheet">
+
+    <!-- My Style sheet -->
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <!-- Navbar content -->
 
-      <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand animated bounceInDown" href="index.php" Title="Back To Home Page"> <img src="img/logoTest.png" alt="AJEmpire Logo"> </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

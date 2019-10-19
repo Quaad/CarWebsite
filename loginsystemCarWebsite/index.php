@@ -27,8 +27,7 @@
         //if a user is logged in display the welcome message from their stored session username
         else if (isset($_SESSION['id'])) {
           $row = displayUser($conn, $_SESSION["id"]);
-          echo $row['uidUsers'];
-
+          echo '<p class="login-status"> Welcome '.$row['uidUsers'];
         }
 
         //Error handlers

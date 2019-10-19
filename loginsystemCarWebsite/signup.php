@@ -4,9 +4,7 @@
 ?>
 
     <main>
-      <div class="wrapper-main">
-        <section class="section-default">
-          <h1>Signup</h1>
+          <h1 class="header-one">Signup</h1>
           <?php
           // create an error message if the user made an error trying to sign up.
           if (isset($_GET["error"])) {
@@ -36,16 +34,18 @@
             }
           }
           ?>
-          <form class="form-signup" action="includes/signup.inc.php" method="post">
+          <div class="container-fluid">
+          <form class="form-row" action="includes/signup.inc.php" method="post">
             <?php
             // check if the user already tried submitting data.
 
             // check username.
             if (!empty($_GET["uid"])) {
-              echo '<input type="text" name="uid" placeholder="Username" value="'.$_GET["uid"].'">';
+              echo '<input type="text" name="uid" placeholder="Username" value="'.$_GET["uid"].'"> ';
             }
             else {
-              echo '<input type="text" name="uid" placeholder="Username">';
+              //username form
+              echo '<div class="form-group col-md-4"> <input type="text" class="form-control" name="uid" placeholder="Username"> </div>';
             }
 
             // check e-mail.
@@ -53,23 +53,46 @@
               echo '<input type="text" name="mail" placeholder="E-mail" value="'.$_GET["mail"].'">';
             }
             else {
-              echo '<input type="text" name="mail" placeholder="E-mail">';
+              //email form
+              echo '<div class="form-group col-md-4"><input type="text" class="form-control" name="mail" placeholder="E-mail"> </div>';
             }
             ?>
 
-          <input type="password" name="pwd" placeholder="Password">
-          <input type="password" name="pwd-repeat" placeholder="Repeat password">
-          <input type="text" name="fore" placeholder="Forename">
-          <input type="text" name="sur" placeholder="Surname">
-          <input type="text" name="post" placeholder="Postcode">
-          <input type="date" name="dob" placeholder="Date Of Birth">
-          <input type="tel" name="phone" placeholder="Telephone">
-          <button type="submit" name="signup-submit">Signup</button>
-          </form>
-        </section>
-      </div>
+            <!-- Form -->
+            <div class="form-group col-md-4">
+              <input type="password" class="form-control"  name = "pwd" placeholder="Password">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="password" class="form-control"  name = "pwd-repeat" placeholder="Repeat Password">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control"  name = "fore" placeholder="Forename">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control"  name = "sur" placeholder="Surname">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control"  name = "post" placeholder="Postcode">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="date" class="form-control"  name = "dob" placeholder="Date Of Birth">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="tel" class="form-control"  name = "phone" placeholder="Telephone">
+            </div>
+
+            <!-- signup button -->
+            <button type="submit" id="btn" class="btn btn-primary hvr-pulse-grow" name="signup-submit">Signup</button>
+
+
+        </div>
+
+        <!-- end of form -->
+        </form>
+
     </main>
 
 <?php
+  //footer
   include "footer.php";
 ?>

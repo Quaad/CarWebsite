@@ -1,0 +1,49 @@
+body {
+  font-family: 'Gentium Basic', serif;
+}
+
+.navbar-brand img {
+  height:64px;
+  width:64px;
+}
+
+.signuperror {
+  padding-top: 14px;
+  font-family: arial;
+  font-size: 16px;
+  color: red;
+  text-align: center;
+}
+
+.signupsuccess {
+  padding-top: 14px;
+  font-family: arial;
+  font-size: 16px;
+  color: green;
+  text-align: center;
+}
+
+.login-status {
+  text-align: center;
+  font-size: 26px;
+  font-family: arial;
+  color: #111;
+}
+
+.header-one
+{
+  text-align: center;
+  margin:10px;
+  text-decoration: underline;
+}
+
+#btn{
+  background-color: green;
+  border: 2px #F6D91C solid;
+  text-transform: uppercase;
+  display:block;
+  margin:auto;
+  width: 100%;
+}
+
+/* Responsive */

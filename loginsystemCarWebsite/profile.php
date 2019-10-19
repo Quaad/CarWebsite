@@ -1,7 +1,13 @@
 <!-- profile edit page -->
 
 <?php
+
   require "header.php";
+
+  //if a user is not signed it, they will be unable to access this page
+  if(!isset($_SESSION['id'])){
+  header("location:index.php");
+  }
 ?>
 
 <?php
@@ -80,8 +86,6 @@ function updateUser($conn, $id) {
   //closing the connection
   mysqli_close($conn);
 
-
-
   ?>
 
       <!--header -->
@@ -151,10 +155,6 @@ function updateUser($conn, $id) {
         }
       }
 
-      //if a user is not signed it, they will be unable to access this page
-      if(!isset($_SESSION['id'])){
-      header("location:index.php");
-      }
 
 
 

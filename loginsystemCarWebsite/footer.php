@@ -1,4 +1,5 @@
 <footer>
+  <!-- footer -->
    <div class="container fluid padding">
      <div class="row text-center">
          <div class="col-12">

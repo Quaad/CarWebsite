@@ -32,7 +32,6 @@ function updateUser($conn, $id) {
 	$postUsers = mysqli_real_escape_string($conn,$_POST["txtpostcode"]);
 	$session_idUsers = $_SESSION['id'];
 
-
   //ERROR HANDLERS AND EMAIL VALIDITY - CHECK THISSSSSSSS
   // check for any empty inputs.
   if (empty($uidUsers) || empty($emailUsers) || empty($foreUsers) || empty($surUsers) ||  empty($dobUsers) || empty($telephoneUsers || empty($postUsers))) {

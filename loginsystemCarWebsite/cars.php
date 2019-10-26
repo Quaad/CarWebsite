@@ -40,7 +40,7 @@ require "header.php"
                   <p> Model: ".$row['model']." </p>
                   </div>
                   <div class='col-md-6'>
-                  <p> Size: ".$row['size']." </p>
+                  <p> Date: ".$row['year']." </p>
                 </div>
               </div>
               <div class='row'>
@@ -48,10 +48,9 @@ require "header.php"
                   <p> Colour: ".$row['colour']." </p>
                   </div>
                   <div class='col-md-6'>
-                  <p> Engine: ".$row['engine']." </p>
+                  <p> Engine Size: ".$row['engine']." </p>
                 </div>
               </div>
-            <p> Date: ".$row['year']." </p>
           </div>
         </div>
       </div>
@@ -67,7 +66,7 @@ require "header.php"
     //no sql injection - safe data
     $search = mysqli_real_escape_string($conn, $_POST['search']);
     //searching the database for what the user typed
-    $sql = "SELECT * FROM cars WHERE make LIKE '%$search%' OR model LIKE '%$search%' OR size LIKE '%$search%' OR colour LIKE '%$search%'
+    $sql = "SELECT * FROM cars WHERE make LIKE '%$search%' OR model LIKE '%$search%' OR colour LIKE '%$search%'
     OR engine LIKE '%$search%' OR year LIKE '%$search%'";
     $result = mysqli_query($conn, $sql);
     $queryResult = mysqli_num_rows($result);
@@ -92,7 +91,7 @@ require "header.php"
                   <p> Model: ".$row['model']." </p>
                   </div>
                   <div class='col-md-6'>
-                  <p> Size: ".$row['size']." </p>
+                  <p> Date: ".$row['year']." </p>
                 </div>
               </div>
               <div class='row'>
@@ -103,7 +102,6 @@ require "header.php"
                   <p> Engine: ".$row['engine']." </p>
                 </div>
               </div>
-            <p> Date: ".$row['year']." </p>
           </div>
         </div>
       </div>

@@ -1,5 +1,10 @@
+<!-- Search Page -->
 <?php
-require "header.php"
+require "header.php";
+//if a user is not signed it, they will be unable to access this page
+if(!isset($_SESSION['id'])){
+header("location:index.php");
+}
 ?>
 
 <!-- search and submit button -->
@@ -115,6 +120,13 @@ require "header.php"
     }
   }
 
+ ?>
+
+ <?php
+ //if a user is not signed it, they will be unable to access this page
+ if(!isset($_SESSION['id'])){
+ header("location:index.php");
+ }
  ?>
 
 </body>

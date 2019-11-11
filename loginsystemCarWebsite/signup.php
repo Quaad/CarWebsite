@@ -45,7 +45,7 @@
             }
             else {
               //username form
-              echo '<div class="form-group col-md-4"> <input type="text" class="form-control" name="uid" placeholder="Username"> </div>';
+              echo '<div class="form-group col-md-4"> <input type="text" class="form-control" name="uid" placeholder="Username" required> </div>';
             }
 
             // check e-mail.
@@ -54,31 +54,31 @@
             }
             else {
               //email form
-              echo '<div class="form-group col-md-4"><input type="text" class="form-control" name="mail" placeholder="E-mail"> </div>';
+              echo '<div class="form-group col-md-4"><input type="text" class="form-control" name="mail" placeholder="E-mail" required> </div>';
             }
             ?>
 
             <!-- Form -->
             <div class="form-group col-md-4">
-              <input type="password" class="form-control"  name = "pwd" placeholder="Password">
+              <input type="password" class="form-control"  name = "pwd" placeholder="Password" required>
             </div>
             <div class="form-group col-md-4">
-              <input type="password" class="form-control"  name = "pwd-repeat" placeholder="Repeat Password">
+              <input type="password" class="form-control"  name = "pwd-repeat" placeholder="Repeat Password" required>
             </div>
             <div class="form-group col-md-4">
-              <input type="text" class="form-control"  name = "fore" placeholder="Forename">
+              <input type="text" class="form-control"  name = "fore" placeholder="Forename" required>
             </div>
             <div class="form-group col-md-4">
-              <input type="text" class="form-control"  name = "sur" placeholder="Surname">
+              <input type="text" class="form-control"  name = "sur" placeholder="Surname" required>
             </div>
             <div class="form-group col-md-4">
-              <input type="text" class="form-control"  name = "post" placeholder="Postcode">
+              <input type="text" class="form-control"  name = "post" placeholder="Postcode" required>
             </div>
             <div class="form-group col-md-4">
-              <input type="date" class="form-control"  name = "dob" placeholder="Date Of Birth">
+              <input type="date" class="form-control"  name = "dob" placeholder="Date Of Birth" required>
             </div>
             <div class="form-group col-md-4">
-              <input type="tel" class="form-control"  name = "phone" placeholder="Telephone">
+              <input type="tel" class="form-control"  name = "phone" placeholder="Telephone" required>
             </div>
 
             <!-- signup button -->

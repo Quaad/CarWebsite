@@ -70,7 +70,7 @@ function updateUser($conn, $id) {
 		return $info;
 	}
 
-  //update button
+  //function which is run when update button is pressed 
   if(isset($_POST["update-details"])){
   	$info = updateUser($conn, $_SESSION["id"]);
 
@@ -96,39 +96,40 @@ function updateUser($conn, $id) {
 
     <div class="form-group col-md-3">
       <label>Username: </label>
-      <input type="text" class="form-control"  name = "txtuidUsers" value = "<?php echo $row["uidUsers"]?>">
+      <input type="text" class="form-control"  name = "txtuidUsers" value = "<?php echo $row["uidUsers"]?>" required>
     </div>
     <div class="form-group col-md-3">
       <label>Email: </label>
-      <input type="text" class="form-control"  name = "txtemailUsers" value = "<?php echo $row["emailUsers"]?>">
+      <input type="text" class="form-control"  name = "txtemailUsers" value = "<?php echo $row["emailUsers"]?>" required>
     </div>
     <div class="form-group col-md-3">
       <label>Firstname: </label>
-      <input type="text" class="form-control"  name = "txtForname" value = "<?php echo $row["foreUsers"]?>">
+      <input type="text" class="form-control"  name = "txtForname" value = "<?php echo $row["foreUsers"]?>" required>
     </div>
     <div class="form-group col-md-3">
       <label>Surname: </label>
-      <input type="text" class="form-control"  name = "txtsurUsers" value = "<?php echo $row["surUsers"]?>">
+      <input type="text" class="form-control"  name = "txtsurUsers" value = "<?php echo $row["surUsers"]?>" required>
     </div>
     <div class="form-group col-md-4">
       <label>Date Of Birth: </label>
-      <input type="date" class="form-control"  name = "numDate" value = "<?php echo $row["dobUsers"]?>">
+      <input type="date" class="form-control"  name = "numDate" value = "<?php echo $row["dobUsers"]?>" required>
     </div>
     <div class="form-group col-md-4">
       <label>Phone Number: </label>
-      <input type="number" class="form-control"  name = "numPhone" value = "<?php echo $row["telephoneUsers"]?>">
+      <input type="number" class="form-control"  name = "numPhone" value = "<?php echo $row["telephoneUsers"]?>" required>
     </div>
     <div class="form-group col-md-4">
       <label>Postcode: </label>
-      <input type="text" class="form-control"  name = "txtpostcode" value = "<?php echo $row["postUsers"]?>">
+      <input type="text" class="form-control"  name = "txtpostcode" value = "<?php echo $row["postUsers"]?>" required>
     </div>
 
   </div>
 
+  <!-- Update button -->
   <button type="submit" class="btn btn-primary" name="update-details">Update</button>
 </form>
 
-      <!-- ERROR OUTPUTS CHECK THISSSSSSS -->
+      <!-- ERROR OUTPUTS -->
       <?php
       if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyfields") {
@@ -150,10 +151,6 @@ function updateUser($conn, $id) {
           echo '<p class="signuperror">Username is already taken!</p>';
         }
       }
-
-
-
-
       ?>
 </div>
 

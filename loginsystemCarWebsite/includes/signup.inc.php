@@ -2,11 +2,11 @@
 // check whether the user got to this page by clicking the proper signup button.
 if (isset($_POST['signup-submit'])) {
 
-  // include the connection script so we can use it later.
+  // include the connection script to use later.
   // don't have to close the MySQLi connection since it is done automatically.
   require 'dbh.inc.php';
 
-  // grab all the data which we passed from the signup form so we can use it later.
+  // grab all the data which was passed from the signup form so it can be used later.
   $username = $_POST['uid'];
   $email = $_POST['mail'];
   $password = $_POST['pwd'];

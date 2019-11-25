@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <!-- Navbar content -->
 
-    <a class="navbar-brand animated bounceInDown" href="index.php" Title="Back To Home Page"> <img src="img/logoTest.png" alt="AJEmpire Logo"> </a>
+    
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

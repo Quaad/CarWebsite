@@ -13,6 +13,32 @@ header("location:index.php");
   <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit-search">Search</button>
 </form>
 
+
+<!-- Saved Searches -->
+<?php
+if (isset($_POST['submit-search']) and ($_POST['search'] != "" )) {
+                      $queryE = 'SELECT content FROM savedsearches WHERE idUsers="$id"';
+                      $id = $_SESSION['id'];
+                      $search = $_POST['search'];
+                      $queryB = "INSERT INTO savedsearches (content,idUsers) VALUES ('$search', '$id')";
+                      mysqli_query($conn, $queryB);
+                      }
+                      ?>
+                  </form>
+                  <form class="past_search" name="pastform" method="POST" >
+                    <?php
+                      $id = $_SESSION['id'];
+                      $search = "SELECT * FROM savedsearches WHERE idUsers = '$id' ORDER BY idSaves DESC LIMIT 5 ";
+                      $saved = mysqli_query($conn, $search);
+                      $sResults = mysqli_num_rows($saved);
+                      while ($row = mysqli_fetch_assoc($saved)) {
+                      echo "<button id='past_searchBtn' value=".$row['content']." type='submit' name='past_searchBtn' >".$row['content']."</button>"
+                    ;}
+
+
+  ?>
+
+
 <h2>All Cars:</h2>
 
   <?php
@@ -115,6 +141,49 @@ header("location:index.php");
   </div>";
       }
     }
+
+    //Saved Searches Links
+    else if (isset($_POST['past_searchBtn'])) {
+    $oldSearches = mysqli_real_escape_string ($conn, $_POST['past_searchBtn']);
+    $query = "SELECT * FROM cars WHERE make LIKE '%$oldSearches%' OR  model LIKE '%$oldSearches%' OR colour LIKE '%$oldSearches%' OR engine LIKE '%$oldSearches%' OR year LIKE '%$oldSearches%'";
+    $results = mysqli_query($conn, $query);
+    $queryResults = mysqli_num_rows($results);
+    while ($row = mysqli_fetch_assoc($results)) {
+      echo "
+      <div class='container-fluid '>
+      <div class='card mb-3' style='max-width: 540px max-height: 200px;' >
+      <div class='row no-gutters'>
+        <div class='col-md-4'>
+          <img src='".$row['image']."' class='card-img' alt='...'>
+        </div>
+          <div class='col-md-8'>
+            <div class='card-body'>
+              <h3 class='card-text'> ".$row['make']." </h3>
+            <div class='row'>
+              <div class='col-md-6'>
+                <p> Model: ".$row['model']." </p>
+                </div>
+                <div class='col-md-6'>
+                <p> Date: ".$row['year']." </p>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-md-6'>
+                <p> Colour: ".$row['colour']." </p>
+                </div>
+                <div class='col-md-6'>
+                <p> Engine Size: ".$row['engine']." </p>
+              </div>
+            </div>
+            <button class='btn btn-outline-success my-2 my-sm-0' type='submit' name=''>Favourite</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>";
+    }
+  }
+
     //else echo out if there are no results related to the search
     else {
       echo "There are no results matching your search";

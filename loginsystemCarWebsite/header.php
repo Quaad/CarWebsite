@@ -1,5 +1,4 @@
 <?php
-  // start a session which allow information to be stored as SESSION variables.
   session_start();
   // "require" creates an error message and stops the script. "include" creates an error and continues the script.
   require "includes/dbh.inc.php";

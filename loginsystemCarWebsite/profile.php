@@ -1,4 +1,3 @@
-<!-- profile edit page -->
 <?php
   require "header.php";
   //if a user is not signed it, they will be unable to access this page
@@ -70,7 +69,7 @@ function updateUser($conn, $id) {
 		return $info;
 	}
 
-  //function which is run when update button is pressed 
+  //function which is run when update button is pressed
   if(isset($_POST["update-details"])){
   	$info = updateUser($conn, $_SESSION["id"]);
 

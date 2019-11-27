@@ -1,4 +1,3 @@
-<!-- Search Page -->
 <?php
 require "header.php";
 //if a user is not signed it, they will be unable to access this page

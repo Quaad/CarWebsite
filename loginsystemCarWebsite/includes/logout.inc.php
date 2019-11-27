@@ -1,4 +1,4 @@
-<!-- Ending the session --> 
+<!-- Ending the session -->
 <?php
 session_start();
 session_unset();

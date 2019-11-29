@@ -10,7 +10,6 @@ header("location:index.php");
 <form class="form-inline my-2 my-lg-0"  action="cars.php" method="POST">
   <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
   <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit-search">Search</button>
-</form>
 
 
 <!-- Saved Searches -->
@@ -24,25 +23,25 @@ if (isset($_POST['submit-search']) and ($_POST['search'] != "" )) {
                       }
                       ?>
                   </form>
-                  <form class="past_search" name="pastform" method="POST" >
+                  <form class="past_search" name="pastform" method="POST">
                     <?php
                       $id = $_SESSION['id'];
                       $search = "SELECT * FROM savedsearches WHERE idUsers = '$id' ORDER BY idSaves DESC LIMIT 5 ";
                       $saved = mysqli_query($conn, $search);
                       $sResults = mysqli_num_rows($saved);
                       while ($row = mysqli_fetch_assoc($saved)) {
-                      echo "<button id='past_searchBtn' value=".$row['content']." type='submit' name='past_searchBtn' >".$row['content']."</button>"
+                      echo "<button id='past_searchBtn' value='".$row['content']."' type='submit' name='past_searchBtn' >".$row['content']."</button>"
                     ;}
 
-
   ?>
+                  </form>
 
 
 <h2>All Cars:</h2>
 
   <?php
   //if the button is not pressed output all info from database
-  if (!isset($_POST['submit-search'])) {
+  if (!isset($_POST['submit-search']) and !isset($_POST['past_searchBtn'])) {
   // Selecting from car table
     $sql = "SELECT * FROM cars";
     //getting a result
@@ -140,9 +139,7 @@ if (isset($_POST['submit-search']) and ($_POST['search'] != "" )) {
   </div>";
       }
     }
-
-    //Saved Searches Links
-    else if (isset($_POST['past_searchBtn'])) {
+  } else if (isset($_POST['past_searchBtn'])) {
     $oldSearches = mysqli_real_escape_string ($conn, $_POST['past_searchBtn']);
     $query = "SELECT * FROM cars WHERE make LIKE '%$oldSearches%' OR  model LIKE '%$oldSearches%' OR colour LIKE '%$oldSearches%' OR engine LIKE '%$oldSearches%' OR year LIKE '%$oldSearches%'";
     $results = mysqli_query($conn, $query);
@@ -187,7 +184,6 @@ if (isset($_POST['submit-search']) and ($_POST['search'] != "" )) {
     else {
       echo "There are no results matching your search";
     }
-  }
 
  ?>
 
